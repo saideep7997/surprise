@@ -66,21 +66,3 @@ yesBtn.addEventListener("click", () => {
   }, 1500);
 });
 
-setTimeout(() => {
-  optionMessage.textContent = "You don't have any option 😌";
-  optionMessage.style.display = "block";
-
-  setTimeout(() => {
-    optionMessage.style.opacity = "1";
-  }, 100);
-
-  setTimeout(() => {
-    optionMessage.style.opacity = "0";
-
-    setTimeout(() => {
-      window.location.href = "page4.html";
-    }, 800);
-
-  }, 3000);
-
-}, 5000);

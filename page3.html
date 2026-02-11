@@ -21,16 +21,23 @@
 
     // After 5 seconds, show "You don't have any option"
     setTimeout(() => {
-      optionMessage.textContent = "You don't have any option";
-      optionMessage.style.display = "block";
-      optionMessage.style.opacity = "1";
+  optionMessage.textContent = "You don't have any option 😌";
+  optionMessage.style.display = "block";
 
-      // After 5 seconds, go to the video page (current page3)
-      setTimeout(() => {
-        window.location.href = "page4.html"; // change to your video page
-      }, 5000);
+  setTimeout(() => {
+    optionMessage.style.opacity = "1";
+  }, 100);
 
-    }, 5000);
+  setTimeout(() => {
+    optionMessage.style.opacity = "0";
+
+    setTimeout(() => {
+      window.location.href = "page4.html";
+    }, 800);
+
+  }, 3000);
+
+}, 5000);
   </script>
 
 </body>
