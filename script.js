@@ -8,14 +8,18 @@ let noOriginal = {
   left: noBtn.offsetLeft,
   top: noBtn.offsetTop
 };
-noBtn.addEventListener("touchstart", moveNoButton);
 noBtn.addEventListener("mouseover", moveNoButton);
-
+noBtn.addEventListener("touchstart", moveNoButton);
 function moveNoButton() {
   document.body.style.background = "red";
 
+  // mobile vibration
+  if (navigator.vibrate) {
+    navigator.vibrate(200);
+  }
+
   noBtn.style.position = "absolute";
-  noBtn.style.zIndex = 1000;
+  noBtn.style.transition = "left 0.4s ease, top 0.4s ease";
 
   const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
   const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -51,5 +55,32 @@ yesBtn.addEventListener("mouseover", () => {
 
 // --- YES click ---
 yesBtn.addEventListener("click", () => {
-  window.location.href = "page2.html";
+  confetti({
+    particleCount: 150,
+    spread: 90,
+    origin: { y: 0.6 }
+  });
+
+  setTimeout(() => {
+    window.location.href = "page2.html";
+  }, 1500);
 });
+
+setTimeout(() => {
+  optionMessage.textContent = "You don't have any option 😌";
+  optionMessage.style.display = "block";
+
+  setTimeout(() => {
+    optionMessage.style.opacity = "1";
+  }, 100);
+
+  setTimeout(() => {
+    optionMessage.style.opacity = "0";
+
+    setTimeout(() => {
+      window.location.href = "page4.html";
+    }, 800);
+
+  }, 3000);
+
+}, 5000);
