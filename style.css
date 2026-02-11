@@ -1,0 +1,149 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: center;
+  background: linear-gradient(#fff0f5, #ffe6f0);
+  padding-top: 100px;
+  transition: background 0.5s ease;
+  overflow: hidden; /* prevent scroll when buttons move */
+  overflow-y: auto;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.2s ease;
+  position: relative; /* needed for movement */
+}
+
+#noBtn {
+  background-color: #ffcccc;
+}
+
+#yesBtn {
+  background-color: #90ee90;
+}
+
+#message {
+  /* place message under the buttons (flow layout) */
+  position: relative;
+  margin: 12px auto 0;
+  background: yellow;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 999;
+  transform: translateY(0);
+  max-width: 20%;
+}
+
+/* Landing page message */
+.landing-message {
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #d6336c;
+}
+
+/* Gift box container */
+.gift-container {
+  font-size: 100px; /* Big gift emoji */
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lid animation (slight rotation to mimic opening/closing) */
+.gift-lid {
+  display: inline-block;
+  animation: openClose 1s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Keyframes for opening/closing */
+@keyframes openClose {
+  0% {
+    transform: rotateX(0deg) scale(1);
+  }
+  50% {
+    transform: rotateX(-15deg) scale(1.05);
+  }
+  100% {
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+
+.photo-container {
+  margin-top: 30px;
+}
+
+#proposal-photo {
+  width: 80%;        /* adjusts photo width */
+  max-width: 500px;  /* optional max width */
+  border-radius: 12px;
+}
+
+#option-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: yellow;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 999;
+}
+
+
+/* Photo container */
+.photo-bounce-container {
+  margin-top: 50px;
+}
+
+/* Bouncing photo */
+.bouncing-photo {
+  width: 400px;       /* adjust as needed */
+  max-width: 80%;
+  border-radius: 12px;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Waiting photo */
+.waiting-photo {
+  width: 200px;       /* adjust as needed */
+  max-width: 80%;
+  border-radius: 12px;
+}

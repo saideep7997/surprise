@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Will You Marry Me 💍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 id="main-text">Will you marry me?</h1>
+
+  <div class="photo-container">
+    <img src="photo.PNG" alt="Us" id="proposal-photo">
+  </div>
+
+  <div id="option-message"></div>
+
+  <script>
+    const optionMessage = document.getElementById("option-message");
+
+    // After 5 seconds, show "You don't have any option"
+    setTimeout(() => {
+      optionMessage.textContent = "You don't have any option";
+      optionMessage.style.display = "block";
+      optionMessage.style.opacity = "1";
+
+      // After 5 seconds, go to the video page (current page3)
+      setTimeout(() => {
+        window.location.href = "page4.html"; // change to your video page
+      }, 5000);
+
+    }, 5000);
+  </script>
+
+</body>
+</html>
