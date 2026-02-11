@@ -164,3 +164,16 @@ button {
     max-width: 85%;
   }
 }
+
+.video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container video {
+  width: 95%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+}
